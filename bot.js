@@ -407,7 +407,7 @@ function genericHelp(msg, parameters) {
                     '`.index all <team>` lists all the indices of a team\n' +
                     '`.iset <piece index> <team> [<piece type> <team>] | [empty]` like .set but from .index\n' +
                     '`.umove <X of piece pos> <Y of piece pos> <X of future pos> <Y of future pos>` to move piece without rules\n' +
-                    '`.move <X of piece pos> <Y of piece pos> <moving message>` to move piece following game rules\n' +
+                    //'`.move <X of piece pos> <Y of piece pos> <moving message>` to move piece following game rules\n' +
                     '`.reset` sets the board to standard chess\n' +
                     '`.ping` pong!\n' +
                     '`.emoji <emoji name>` sends an emoji from this server from name');
@@ -523,9 +523,7 @@ function command(msg) {
             break;
         case '.echo':
             {
-                /*if (msg.author.tag === "MTRC30#9275") {
-                    msg.reply("matteo non può usare .echo");
-                } else */ latestMsg.channel.send(msg.content.slice(6, msg.content.length));
+                latestMsg.channel.send(msg.content.slice(6, msg.content.length));
                 try {
                     msg["delete"]();
                 }
